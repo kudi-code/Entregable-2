@@ -1,10 +1,63 @@
+
+
 .App {
   text-align: center;
+  background-image: url(./assets/storm.gif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100vw;
+  height: 100vh;
+  margin: -30px auto;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.weather{
+  background-color: rgba(255, 255, 255, 0.719);
+  padding: 35px;
+  width: 20vw;
+  margin: 0 auto;
+  transform: translateY(12vh);
+  border-radius: 50px;  
+}
+.weather img{
+  width: 200px;
+  margin: -50px;
+}
+.weather p{
+  font-size: 1.2rem;
+}
+.weather button{
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  background-color: rgb(51, 49, 49);
+  color: white;
+  border: none;
+  border-radius: 15px;
+
+}
+.weather button:hover{
+  background-color: darkcyan;
+
+}
+@media only screen and (max-width: 500px){
+  *{
+    font-size: 85%;
+  }
+  .App{
+    background-size: cover;
+  }
+  .weather{
+    width: 50vw;
+  }
+  .weather h2{
+    font-size: 1.8rem;
+  }
+  .weather h4{
+    font-size: 1.2rem;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
