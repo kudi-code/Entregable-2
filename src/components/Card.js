@@ -4,11 +4,8 @@ const Card = ({country,weatherMain,speed,cloud,cloudImg,pressure,temp}) =>{
     const[isFarenheit,setFarenheit] = useState([true, "°F", 0]) 
     const[icon,setIcon] = useState("") 
 
-    useEffect(() => {
-        convertDegrees()
-        setIcon(cloudImg)
-        // return convertDegrees
-    } , [temp])
+    
+
     const convertDegrees = () =>{
         if(isFarenheit[0] ===true){            
             setFarenheit([false,"°C", Math.round(temp-273.15) ])
@@ -17,6 +14,14 @@ const Card = ({country,weatherMain,speed,cloud,cloudImg,pressure,temp}) =>{
             setFarenheit([true,"°F", Math.round((temp-237.15)*1.8+32)])
         }
     }
+
+    useEffect(() => {
+        
+        convertDegrees()
+        setIcon(cloudImg)
+        // return convertDegrees
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    } , [temp, cloudImg])
     console.log(isFarenheit[2])
 
     return(
