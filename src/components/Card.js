@@ -23,12 +23,12 @@ const Card = ({country,weatherMain,speed,cloud,cloudImg,pressure,temp}) =>{
         <div className="weather">
             <h2>The Weather App</h2>
             <h4>{country}</h4>
-            <img src={icon} />
+            <img src={icon} alt="clouds" />
             <p>{weatherMain}</p>
             <p><b>Wind Speed:</b> {speed} m/s</p>
             <p><b>Clouds: </b>{cloud} %</p>
             <p><b>Pressure: </b>{pressure} mb</p>
-            <p><b>{isFarenheit[2] === NaN ? "0" : isFarenheit[2] } {isFarenheit[1]}</b></p>
+            <p><b>{isNaN (isFarenheit[2]) === true ? "0" : isFarenheit[2] } {isFarenheit[1]}</b></p>
         <button onClick={convertDegrees}>Degrees °F/°C</button>
 
         </div>
